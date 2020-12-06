@@ -3,24 +3,47 @@ package dev.paulshields.aoc.common
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isNull
+import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
 class FileHelpersTest {
-    private val testFileLocation = "/FileHelpersTestFile.txt"
+    private val readFileAsStringTestFileLocation = "/ReadFileAsStringTestFile.txt"
+    private val readFileAsStringListTestFileLocation = "/ReadFileAsStringListTestFile.txt"
     private val brokenFileLocation = "/FilethatDoesNotExist.txt"
-    private val contentsOfTestFile = "2020 was not a good year!"
+    private val contentsOfReadFileAsStringTestFile = "2020 was not a good year!"
+    private val contentsOfReadFileAsStringListTestFile = listOf("2020", "was", "not", "a", "good", "year!")
 
-    @Test
-    fun `should read contents of file`() {
-        val contents = readFileAsString(testFileLocation)
+    @Nested
+    inner class ReadFileAsStringTests {
+        @Test
+        fun `should read contents of file`() {
+            val contents = readFileAsString(readFileAsStringTestFileLocation)
 
-        assertThat(contents).isEqualTo(contentsOfTestFile)
+            assertThat(contents).isEqualTo(contentsOfReadFileAsStringTestFile)
+        }
+
+        @Test
+        fun `should handle file not found`() {
+            val contents = readFileAsString(brokenFileLocation)
+
+            assertThat(contents).isNull()
+        }
     }
 
-    @Test
-    fun `should handle file not found`() {
-        val contents = readFileAsString(brokenFileLocation)
+    @Nested
+    inner class ReadFileAsStringListTests {
+        @Test
+        fun `should read contents of file as a string list`() {
+            val contents = readFileAsStringList(readFileAsStringListTestFileLocation)
 
-        assertThat(contents).isNull()
+            assertThat(contents).isEqualTo(contentsOfReadFileAsStringListTestFile)
+        }
+
+        @Test
+        fun `should handle file not found`() {
+            val contents = readFileAsStringList(brokenFileLocation)
+
+            assertThat(contents).isEqualTo(emptyList())
+        }
     }
 }
