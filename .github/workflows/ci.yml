@@ -14,7 +14,7 @@ jobs:
           java-package: jdk
           architecture: x64
 
-      - name: Build Plugin
+      - name: Build Project
         run: ./gradlew clean build
 
       - name: Run Tests
