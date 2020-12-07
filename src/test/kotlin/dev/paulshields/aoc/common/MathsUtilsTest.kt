@@ -7,7 +7,7 @@ import dev.paulshields.aoc.testcommon.runTest
 import org.junit.jupiter.api.TestFactory
 
 class MathsUtilsTest {
-    @TestFactorsoy
+    @TestFactory
     fun `should round up an integer division in all cases`() = parameterizedTest(
         Pair(10, 5) to 2,
         Pair(10, 3) to 4,
