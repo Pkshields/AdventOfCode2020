@@ -6,7 +6,7 @@ import assertk.assertions.isNull
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class FileHelpersTest {
+class FileUtilsTest {
     private val readFileAsStringTestFileLocation = "/ReadFileAsStringTestFile.txt"
     private val readFileAsStringListTestFileLocation = "/ReadFileAsStringListTestFile.txt"
     private val brokenFileLocation = "/FilethatDoesNotExist.txt"
