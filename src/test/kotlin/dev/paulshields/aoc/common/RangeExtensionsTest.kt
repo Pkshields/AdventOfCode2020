@@ -8,7 +8,7 @@ import org.junit.jupiter.api.TestFactory
 
 class RangeExtensionsTest {
     @TestFactory
-    fun `should venerate a list containing all elements within a range`() = parameterizedTest(
+    fun `should generate a list containing all elements within a range`() = parameterizedTest(
         0..5 to listOf(0, 1, 2, 3, 4, 5),
         3..7 to listOf(3, 4, 5, 6, 7),
         0 until 5 to listOf(0, 1, 2, 3, 4),
