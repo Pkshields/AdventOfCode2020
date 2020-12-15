@@ -1,8 +1,8 @@
 package dev.paulshields.aoc.common
 
 import assertk.assertThat
+import assertk.assertions.isEmpty
 import assertk.assertions.isEqualTo
-import assertk.assertions.isNull
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
@@ -26,7 +26,7 @@ class FileUtilsTest {
         fun `should handle file not found`() {
             val contents = readFileAsString(brokenFileLocation)
 
-            assertThat(contents).isNull()
+            assertThat(contents).isEmpty()
         }
     }
 

@@ -6,8 +6,8 @@ fun main() {
     println(" ** Day 1: Report Repair ** \n")
 
     val expenseReport = readFileAsString("/day1/ExpenseReport.txt")
-        ?.lines()
-        ?.mapNotNull { it.toIntOrNull() } ?: emptyList()
+        .lines()
+        .mapNotNull { it.toIntOrNull() }
 
     val validPair = findSum(expenseReport, 2020)
     println("Found values ${validPair.first} and ${validPair.second} equal 2020!")

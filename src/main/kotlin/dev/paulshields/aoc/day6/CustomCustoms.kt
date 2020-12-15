@@ -7,8 +7,7 @@ fun main() {
 
     val delimiterBetweenCustomsForms = "\n\n"
     val rawAnswersToCustomDeclaration = readFileAsString("/day6/CustomsDeclarationForms.txt")
-        ?.split(delimiterBetweenCustomsForms)
-        ?: emptyList()
+        .split(delimiterBetweenCustomsForms)
 
     val customsFormsForPart1 = rawAnswersToCustomDeclaration
         .map(::combineAnswersWhereAnyoneSaidYesIntoCustomsForm)

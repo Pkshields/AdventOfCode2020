@@ -7,18 +7,18 @@ fun main() {
 
     val delimiterBetweenPassports = "\n\n"
     val passports = readFileAsString("/day4/Passports.txt")
-        ?.split(delimiterBetweenPassports)
-        ?.map { Passport.parseFromString(it) }
+        .split(delimiterBetweenPassports)
+        .map { Passport.parseFromString(it) }
 
     val numberOfPassportsContainingAllFields = passports
-        ?.filter { it.passportContainsAllFields() }
-        ?.count() ?: 0
+        .filter { it.passportContainsAllFields() }
+        .count()
 
     println("There are $numberOfPassportsContainingAllFields passports containing all fields!")
 
     val numberOfValidPassports = passports
-        ?.filter { it.passportIsValid() }
-        ?.count() ?: 0
+        .filter { it.passportIsValid() }
+        .count()
 
     println("There are $numberOfValidPassports valid passports!")
 }
