@@ -3,7 +3,7 @@ package dev.paulshields.aoc.day11
 import dev.paulshields.aoc.common.readFileAsString
 
 fun main() {
-    println(" ** Day 10: Adapter Array ** \n")
+    println(" ** Day 11: Adapter Array ** \n")
 
     val fileInput = readFileAsString("/day11/SeatingLayout.txt")
 
