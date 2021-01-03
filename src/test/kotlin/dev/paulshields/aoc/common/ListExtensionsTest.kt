@@ -17,6 +17,7 @@ class ListExtensionsTest {
         assertThat(result).containsOnly(input[0], input[1], input[2])
         assertThat(result).isInstanceOf(Stack<String>().javaClass)
     }
+
     @Test
     fun `should handle empty input when creating stack from list`() {
         val result = emptyList<String>().toStack()
